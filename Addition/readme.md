@@ -1,4 +1,4 @@
-# IEEE 754-2008 Single Precision Floating Point Arithmetic Unit
+# IEEE 754-2008 Single Precision Floating Point Arithmetic Unit - Addition
 
 ## Overview
 
