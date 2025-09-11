@@ -1,0 +1,32 @@
+`timescale 1ns / 1ps
+
+
+module Add8 #(
+    parameter N = 8
+)(
+    input logic [N-1:0] A,
+    input logic [N-1:0] B,
+    output logic [N-1:0] S
+);
+
+    logic [N:0] C;
+    logic c_in = 0;
+    logic c_out;
+
+    assign C[0] = c_in;
+    
+	 
+	 genvar i;
+
+    generate
+        for (i = 0; i < N; ++i) begin: add
+            full_adder fa(
+                .a(A[i]),
+                .b(B[i]^c_in),
+                .c_in(C[i]),
+                .c_out(C[i+1]),
+                .sum(S[i])
+            );            
+        end
+    endgenerate
+endmodule
